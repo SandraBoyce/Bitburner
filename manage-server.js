@@ -1,8 +1,8 @@
 /** @param {NS} ns */
 export async function main(ns) {
-    var hostname = ns.args[0]
-    var targets = [ns.args[1], ns.args[2], ns.args[3]]
-    var multiplier = 2
+    const hostname = ns.args[0]
+    const targets = [ns.args[1], ns.args[2], ns.args[3]]
+    const multiplier = 2
 
     // for (const target of targets) {
     //     ns.exec('grow.js', hostname, 76 * multiplier, target)

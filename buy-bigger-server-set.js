@@ -1,9 +1,9 @@
 /** @param {NS} ns */
 export async function main(ns) {
-    var multiplier = ns.args[0]
-    var ram = 1024 * multiplier;
+    const multiplier = ns.args[0]
+    const ram = 1024 * (2 ^ multiplier);
 
-    var i = 0;
+    let i = 0;
     
     // Continuously try to purchase servers until we've reached the maximum
     // amount of servers
@@ -15,7 +15,7 @@ export async function main(ns) {
             //  2. Copy our hacking script onto the newly-purchased server
             //  3. Run our hacking script on the newly-purchased server with 3 threads
             //  4. Increment our iterator to indicate that we've bought a new server
-            var hostname = ns.purchaseServer( `${i}th` , ram);
+            const hostname = ns.purchaseServer( `${i}th` , ram);
             await ns.scp("grow.js", hostname);
             await ns.scp("weaken.js", hostname);
             await ns.scp("hack.js", hostname);

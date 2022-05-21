@@ -1,7 +1,7 @@
 /** @param {NS} ns */
 export async function main(ns) {
-	var hostname = ns.args[0];
-    var multiplier = ns.args[1]
+	const hostname = ns.args[0];
+    const multiplier = ns.args[1]
     // if (target in )
     if (ns.fileExists("BruteSSH.exe")) {
         ns.brutessh(hostname);

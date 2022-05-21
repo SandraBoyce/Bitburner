@@ -2,7 +2,7 @@
 export async function main(ns) {
 // Array of all servers that don't need any ports opened
 // to gain root access. These have 16 GB of RAM
-var servers0Port = ["sigma-cosmetics",
+const servers0Port = ["sigma-cosmetics",
                     "joesguns",
                     "foodnstuff",
                     "nectar-net",
@@ -12,14 +12,14 @@ var servers0Port = ["sigma-cosmetics",
 
 // Array of all servers that only need 1 port opened
 // to gain root access. These have 32 GB of RAM
-var servers1Port = ["neo-net",
+const servers1Port = ["neo-net",
                     "zer0",
                     "max-hardware",
                     "iron-gym"];
 
 // Array of all servers that only need 2 port opened
 // to gain root access. These have 32 GB of RAM
-var servers2Port = ["omega-net",
+const servers2Port = ["omega-net",
                     "silver-helix",
                     "johnson-ortho",
                     "iron-gym",
@@ -30,7 +30,7 @@ var servers2Port = ["omega-net",
                     ];
 // Array of all servers that only need 3 port opened
 // to gain root access. These have 32 GB of RAM
-var servers3Port = ["computek",
+const servers3Port = ["computek",
                     "netlink",
                     "catalyst",
                     "millenium-fitness",
@@ -38,18 +38,18 @@ var servers3Port = ["computek",
                     "rho-construction"];
 
 
-scp('n00dles.js', 'n00dles')
-nuke('n00dles')
-exec('n00dles.js', 1, 'n00dles')
+await ns.scp('n00dles.js', 'n00dles')
+ns.nuke('n00dles')
+ns.exec('n00dles.js', 1, 'n00dles')
 // Copy our scripts onto each server that requires 0 ports
 // to gain root access. Then use nuke() to gain admin access and
 // run the scripts.
-for (var i = 0; i < servers0Port.length; ++i) {
-    var serv = servers0Port[i];
+for (let i = 0; i < servers0Port.length; ++i) {
+    const serv = servers0Port[i];
 
-    scp("n00dles.js", serv);
-    nuke(serv);
-    exec("n00dles.js", 6, serv);
+    await ns.scp("n00dles.js", serv);
+    ns.nuke(serv);
+    ns.exec("n00dles.js", 6, serv);
 }
 
 // Wait until we acquire the "BruteSSH.exe" program
@@ -60,13 +60,13 @@ while (!fileExists("BruteSSH.exe")) {
 // Copy our scripts onto each server that requires 1 port
 // to gain root access. Then use brutessh() and nuke()
 // to gain admin access and run the scripts.
-for (var i = 0; i < servers1Port.length; ++i) {
-    var serv = servers1Port[i];
+for (let i = 0; i < servers1Port.length; ++i) {
+    const serv = servers1Port[i];
 
-    scp("n00dles.js", serv);
-    brutessh(serv);
-    nuke(serv);
-    exec("n00dles.js", 12, serv);
+    await ns.scp("n00dles.js", serv);
+    ns.brutessh(serv);
+    ns.nuke(serv);
+    ns.exec("n00dles.js", 12, serv);
 }
 
 // while (!fileExists("FTPCrack.exe")) {

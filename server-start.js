@@ -2,10 +2,10 @@
 export async function main(ns) {
     // How much RAM each purchased server will have. In this case, it'll
     // be 8GB.
-    var ram = 1024;
+    const ram = 1024;
     
     // Iterator we'll use for our loop
-    var i = 0;
+    let i = 0;
     
     // Continuously try to purchase servers until we've reached the maximum
     // amount of servers
@@ -17,7 +17,7 @@ export async function main(ns) {
             //  2. Copy our hacking script onto the newly-purchased server
             //  3. Run our hacking script on the newly-purchased server with 3 threads
             //  4. Increment our iterator to indicate that we've bought a new server
-            var hostname = ns.purchaseServer( `${i}th` , ram);
+            const hostname = ns.purchaseServer( `${i}th` , ram);
             await ns.scp("grow.js", hostname);
             await ns.scp("weaken.js", hostname);
             await ns.scp("hack.js", hostname);
