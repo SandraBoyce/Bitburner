@@ -1,1 +1,6 @@
 backups/
+testing/
+*.txt
+*.zip
+*.msg
+*.vscode

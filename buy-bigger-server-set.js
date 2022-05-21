@@ -1,10 +1,8 @@
 /** @param {NS} ns */
 export async function main(ns) {
-    // How much RAM each purchased server will have. In this case, it'll
-    // be 8GB.
-    var ram = 1024;
-    
-    // Iterator we'll use for our loop
+    var multiplier = ns.args[0]
+    var ram = 1024 * multiplier;
+
     var i = 0;
     
     // Continuously try to purchase servers until we've reached the maximum
@@ -23,7 +21,8 @@ export async function main(ns) {
             await ns.scp("hack.js", hostname);
             await ns.scp("runner.js", hostname);
             await ns.scp("n00dles.js", hostname);
-            exec("n00dles.js", hostname, 426);
+            ns.exec("n00dles.js", hostname, 426);
+            ns.tprint(hostname, ' purchased')
             // printf(i)
             ++i;
         }

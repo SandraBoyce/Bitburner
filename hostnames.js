@@ -29,7 +29,15 @@ export async function main(ns) {
 		'zb-institute',
 		'zb-def',
 		'lexo-corp',
-		'zeus-med'
+		'zeus-med',
+		'solaris',
+		'nova-med',
+		'univ-energy',
+		'global-pharm',
+		'deltaone',
+		'galactic-cyber',
+		'aerocorp',
+		'icarus'
 	];
 
 }
