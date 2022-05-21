@@ -27,9 +27,22 @@ export async function main(ns) {
     
     ns.nuke(hostname);
 
-    await ns.scp('hack.js', hostname, multiplier, hostname)
-    await ns.scp('n00dles.js', hostname)
+    // await ns.scp('hack.js', hostname, multiplier, hostname)
+    // await ns.scp('n00dles.js', hostname)
+
+    await ns.scp('filler-three.js', hostname)
+    await ns.scp("grow.js", hostname);
+    await ns.scp("weaken.js", hostname);
+    await ns.scp("hack.js", hostname);
+    await ns.scp("runner.js", hostname);
+
+    ns.exec('grow.js', hostname, 10 * multiplier, hostname)
+    ns.exec('weaken.js', hostname, 2 * multiplier, hostname)
     ns.exec('hack.js', hostname, multiplier, hostname)
+
+    ns.exec('filler-three.js', hostname, multiplier - 1, hostname)
+
+    // ns.exec('hack.js', hostname, multiplier, hostname)
     ns.tprint(hostname, 'end host hack')
 
 }

@@ -1,6 +1,7 @@
 run manage-server.js 7th zb-institute lexo-corp snap-fitness
 run manage-server.js 10th infocomm
 run manage-server.js 0th solaris zeus-med zb-institute
+run manage-server.js 0th b-and-a 4sigma
 
 816 nova-med
 817 univ-energy
@@ -20,11 +21,11 @@ run manage-server.js 0th solaris zeus-med zb-institute
 888 taiyang-digital
 888 omnia
 
-909 omnitek +
-919 infocomm +
+909 omnitek 
+919 infocomm 
 925 The-Cave --no money
-952 b-and-a
-956 4sigma
+952 b-and-a +
+956 4sigma +
 995 defcomm
 
 1002 powerhouse-fitness

@@ -6,6 +6,7 @@ export async function main(ns) {
     
     // Iterator we'll use for our loop
     let i = 0;
+    const target = ns.args[0] || "n00dles";
     
     // Continuously try to purchase servers until we've reached the maximum
     // amount of servers
@@ -22,10 +23,10 @@ export async function main(ns) {
             await ns.scp("weaken.js", hostname);
             await ns.scp("hack.js", hostname);
             await ns.scp("runner.js", hostname);
-            await ns.scp("n00dles.js", hostname);
-            exec("n00dles.js", hostname, 426);
-            // printf(i)
+            await ns.scp("filler-three", hostname);
+            ns.exec("filler-three.js", hostname, 426, target);
+            // ns.exec("filler-three.js", hostname, 426, target= ns.args[0] || "n00dles");
             ++i;
         }
     }
-    }
+}
