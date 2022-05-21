@@ -22,7 +22,16 @@ export async function main(ns) {
 		'crush-fitness',
 		'rothman-uni',
 		'phantasy',
-		'the-hub'
+		'the-hub',
+		'snap-fitness',
+		'alpha-ent',
+		'millenium-fitness',
+		'zb-institute',
+		'zb-def',
+		'lexo-corp',
+		'zeus-med'
 	];
 
 }
+
+//syscore millenium-fitness snap-fitness

@@ -18,13 +18,13 @@ while (i < getPurchasedServerLimit()) {
         //  3. Run our hacking script on the newly-purchased server with 3 threads
         //  4. Increment our iterator to indicate that we've bought a new server
         var hostname = purchaseServer( `${i}th` , ram);
-        scp("mgrow.js", hostname);
-        scp("mweaken.js", hostname);
-        scp("mhack.js", hostname);
-        scp("mrunner.js", hostname);
+        scp("grow.js", hostname);
+        scp("weaken.js", hostname);
+        scp("hack.js", hostname);
+        scp("runner.js", hostname);
         scp("n00dles.js", hostname);
         exec("n00dles.js", hostname, 426);
-        printf(i)
+        // printf(i)
         ++i;
     }
 }

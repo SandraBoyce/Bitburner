@@ -1,5 +1,6 @@
 /** @param {NS} ns */
 export async function main(ns) {
-	var target = ns.args[0];
-    ns.exec('mhack.js', 2, target)
+	var hostname = ns.args[0];
+    var target = ns.args[1]
+    ns.exec('hack.js', hostname, 2, target)
 }

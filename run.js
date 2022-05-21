@@ -4,9 +4,9 @@ export async function main(ns) {
 	var target = ns.args[0]
 	// target = [...ns.args]
 	// for (var x of target) {
-		ns.run('mgrow.js', 76 * multiplier, target)
-		ns.run('mweaken.js', 15 * multiplier, target)
-		ns.run('mhack.js', 7 * multiplier, target)
+		ns.run('grow.js', 76 * multiplier, target)
+		ns.run('weaken.js', 15 * multiplier, target)
+		ns.run('hack.js', 7 * multiplier, target)
 		// ns.print(x)
 	// }
 }

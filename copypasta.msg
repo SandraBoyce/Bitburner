@@ -1,0 +1,1 @@
+run manage-server.js 7th zb-institute lexo-corp snap-fitness
