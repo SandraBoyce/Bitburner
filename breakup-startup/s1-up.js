@@ -15,7 +15,7 @@ export async function main(ns) {
         await ns.scp("grow.js", serv);
         await ns.scp("weaken.js", serv);
         await ns.scp("hack.js", serv);
-        await ns.scp("filler-three", serv);
+        await ns.scp("filler-three.js", serv);
         // await ns.scp("n00dles.js", serv);
         // await ns.scp("runner.js", serv);
         
@@ -29,7 +29,7 @@ export async function main(ns) {
         
         ns.exec("filler-three.js", serv, 2, serv);
     }
-
-    ns.spawn("s2-up", 1)
+    ns.tprint('step serv1')
+    ns.spawn("s2-up.js", 1)
                         
 }

@@ -2,9 +2,9 @@
 export async function main(ns) {
 	await ns.scp('filler-three.js', 'n00dles')
     ns.nuke('n00dles')
-    ns.exec('filler-three.js', 1, 'n00dles')
+    ns.exec('filler-three.js', 'n00dles', 1, 'n00dles')
     ns.tprint('step n00dles')
-    ns.spawn("s1-up.js", 1)
+    
 
     // Array of all servers that don't need any ports opened
     // to gain root access. These have 16 GB of RAM
@@ -21,8 +21,9 @@ export async function main(ns) {
     
         await ns.scp("filler-three.js", serv);
         ns.nuke(serv);
-        ns.exec("filler-three.js", 6, serv);
+        ns.exec("filler-three.js",serv, 6, serv);
     }
+    ns.tprint('step serv0')
 
-    ns.spawn("s1-up", 1)
+    ns.spawn("s1-up.js", 1)
 }

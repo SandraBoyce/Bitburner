@@ -16,17 +16,17 @@ export async function main(ns) {
         sleep(4000);
     }
 
-    for (var i = 0; i < servers2Port.length; ++i) {
+    for (let i = 0; i < servers2Port.length; ++i) {
         const serv = servers2Port[i];
     
-        maxRam = ns.getServerMaxRam(serv)
-        const multiplier = parseInt(maxRam / 22.1)
-        const fillerMult = parseInt( maxRam - (22.1 * multiplier) - 5)
+        const maxRam = ns.getServerMaxRam(serv)
+        const multiplier = Math.max( parseInt(maxRam / 22.1), 1)
+        const fillerMult = Math.max( parseInt( maxRam - (22.1 * multiplier) - 5), 1)
     
         await ns.scp("grow.js", serv);
         await ns.scp("weaken.js", serv);
         await ns.scp("hack.js", serv);
-        await ns.scp("filler-three", serv);
+        await ns.scp("filler-three.js", serv);
     
         ns.brutessh(serv);
         ns.ftpcrack(serv)
@@ -36,7 +36,8 @@ export async function main(ns) {
         ns.exec('weaken.js', serv, 2 * multiplier, serv)
         ns.exec('hack.js', serv, 1 * multiplier, serv)
     
-        ns.exec("filler-three.js", serv, fillerMult, serv);
+        ns.exec("filler-three.js", serv, 1 * fillerMult, serv);
     }
-    ns.spawn("s3-up", 1)
+    ns.tprint('step serv2')
+    ns.spawn("s3-up.js", 1)
 }
