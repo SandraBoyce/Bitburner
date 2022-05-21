@@ -1,0 +1,2 @@
+var ram = 4096;
+purchaseServer('first', ram);
