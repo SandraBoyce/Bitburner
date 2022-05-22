@@ -20,9 +20,9 @@ export async function main(ns) {
     // }
     ns.killall(hostname)
     targets.forEach(target => {
-        ns.exec('grow.js', hostname, 76 * multiplier, target)
-        ns.exec('weaken.js', hostname, 15 * multiplier, target)
-        ns.exec('hack.js', hostname, 5 * multiplier, target)
+        ns.exec('grow.js', hostname, 10 * multiplier, target)
+        ns.exec('weaken.js', hostname, 2 * multiplier, target)
+        ns.exec('hack.js', hostname, 1 * multiplier, target)
     })
 
     //single target

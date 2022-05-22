@@ -54,11 +54,11 @@ export async function main(ns) {
 
     //     for (const t of target) {
     //         ns.run('grow.js', 10 * baseR, t)
-	// 	    ns.run('weaken.js', 2 * baseR, t)
-	// 	    ns.run('hack.js', 1 * baseR, t)
+	// 	        ns.run('weaken.js', 2 * baseR, t)
+	// 	        ns.run('hack.js', 1 * baseR, t)
 
 	// 	    ns.run('filler-three.js', 1, t)
-    //         ns.tprint(t)
+    //             ns.tprint(t)
             
     //     }
     //     ns.tprint('32gb for ', target)
