@@ -9,7 +9,8 @@ export async function main(ns) {
                         "rothman-uni",
                         "rho-construction"];
                         
-    while (!ns.fileExists("HTTPWorm.exe")) {
+    
+    while (!ns.fileExists("relaySMTP.exe")) {
         sleep(40000);
     }
 
@@ -27,7 +28,7 @@ export async function main(ns) {
     
         ns.brutessh(serv);
         ns.ftpcrack(serv)
-        ns.httpworm(serv)
+        ns.relaysmtp(serv)
         ns.nuke(serv);
     
         if (maxRam >= 32) {

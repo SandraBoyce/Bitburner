@@ -11,7 +11,7 @@ export async function main(ns) {
         'snap-fitness'
     ]
 
-    while (!ns.fileExists("relaySMTP.exe")) {
+    while (!ns.fileExists("HTTPWorm.exe")) {
         sleep(40000);
     }
 
