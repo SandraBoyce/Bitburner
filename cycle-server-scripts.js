@@ -12,7 +12,7 @@ export async function main(ns) {
         ns.exec('weaken.js', hostname, 15 * multiplier, target)
         ns.exec('hack.js', hostname, 5 * multiplier, target)
 
-        ns.exec('n00dles.js', hostname, 4)
+        ns.exec('filler-three.js', hostname, 4)
 
         ns.tprint(hostname, ' cycled')
 	}

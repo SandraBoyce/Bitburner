@@ -11,6 +11,8 @@ export async function main(ns) {
 
     for (let i = 0; i < servers1Port.length; ++i) {
         const serv = servers1Port[i];
+
+        ns.killall(serv)
         
         await ns.scp("grow.js", serv);
         await ns.scp("weaken.js", serv);
@@ -28,6 +30,8 @@ export async function main(ns) {
         ns.exec('hack.js', serv, 1, serv)
         
         ns.exec("filler-three.js", serv, 2, serv);
+
+        ns.tprint(serv, ' has been s1-upped')
     }
     ns.tprint('step serv1')
     ns.spawn("s2-up.js", 1)

@@ -36,7 +36,7 @@ export async function main(ns) {
     //only for first cycle***
     // await ns.scp('filler-three.js', hostname)
 
-     ns.exec('filler-three.js', hostname, multiplier - 2, targets[0])
+     ns.exec('filler-three.js', hostname, Math.max(multiplier - 2, 1), targets[0])
 
     
 }

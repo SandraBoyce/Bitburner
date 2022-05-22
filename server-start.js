@@ -23,7 +23,7 @@ export async function main(ns) {
             await ns.scp("weaken.js", hostname);
             await ns.scp("hack.js", hostname);
             await ns.scp("runner.js", hostname);
-            await ns.scp("filler-three", hostname);
+            await ns.scp("filler-three.js", hostname);
             ns.exec("filler-three.js", hostname, 426, target);
             // ns.exec("filler-three.js", hostname, 426, target= ns.args[0] || "n00dles");
             ++i;

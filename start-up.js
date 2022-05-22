@@ -40,7 +40,7 @@ const servers3Port = ["computek",
 
 await ns.scp('filler-three.js', 'n00dles')
 ns.nuke('n00dles')
-ns.exec('filler-three.js', 1, 'n00dles')
+ns.exec('filler-three.js', 'n00dles', 1, 'n00dles')
 
 // Copy our scripts onto each server that requires 0 ports
 // to gain root access. Then use nuke() to gain admin access and
@@ -51,7 +51,7 @@ for (let i = 0; i < servers0Port.length; ++i) {
 
     await ns.scp("filler-three.js", serv);
     ns.nuke(serv);
-    ns.exec("filler-three.js", 6, serv);
+    ns.exec("filler-three.js",serv, 6, serv);
 }
 
 // Wait until we acquire the "BruteSSH.exe" program
@@ -72,7 +72,7 @@ for (let i = 0; i < servers1Port.length; ++i) {
     await ns.scp("grow.js", serv);
     await ns.scp("weaken.js", serv);
     await ns.scp("hack.js", serv);
-    await ns.scp("filler-three", serv);
+    await ns.scp("filler-three.js", serv);
     // await ns.scp("n00dles.js", serv);
     // await ns.scp("runner.js", serv);
 
@@ -95,14 +95,14 @@ while (!ns.fileExists("FTPCrack.exe")) {
 for (var i = 0; i < servers2Port.length; ++i) {
     const serv = servers2Port[i];
 
-    maxRam = ns.getServerMaxRam(serv)
-    const multiplier = parseInt(maxRam / 22.1)
-    const fillerMult = parseInt( maxRam - (22.1 * multiplier) - 5)
+    const maxRam = ns.getServerMaxRam(serv)
+        const multiplier = Math.max( parseInt(maxRam / 22.1), 1)
+        const fillerMult = Math.max( parseInt( maxRam - (22.1 * multiplier) - 5), 1)
 
     await ns.scp("grow.js", serv);
     await ns.scp("weaken.js", serv);
     await ns.scp("hack.js", serv);
-    await ns.scp("filler-three", serv);
+    await ns.scp("filler-three.js", serv);
 
     ns.brutessh(serv);
     ns.ftpcrack(serv)
@@ -122,14 +122,14 @@ while (!ns.fileExists("HTTPWorm.exe")) {
 for (var i = 0; i < servers3Port.length; ++i) {
     const serv = servers3Port[i];
 
-    maxRam = ns.getServerMaxRam(serv)
-    const multiplier = parseInt(maxRam / 22.1)
-    const fillerMult = parseInt( maxRam - (22.1 * multiplier) - 5)
+    const maxRam = ns.getServerMaxRam(serv)
+        const multiplier = Math.max( parseInt(maxRam / 22.1), 1)
+        const fillerMult = Math.max( parseInt( maxRam - (22.1 * multiplier) - 5), 1)
 
     await ns.scp("grow.js", serv);
     await ns.scp("weaken.js", serv);
     await ns.scp("hack.js", serv);
-    await ns.scp("filler-three", serv);
+    await ns.scp("filler-three.js", serv);
 
     ns.brutessh(serv);
     ns.ftpcrack(serv)

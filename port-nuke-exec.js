@@ -1,7 +1,7 @@
 /** @param {NS} ns */
 export async function main(ns) {
 	const hostname = ns.args[0];
-    const multiplier = ns.args[1]
+    const multiplier = ns.args[1] || 1
     // if (target in )
     if (ns.fileExists("BruteSSH.exe")) {
         ns.brutessh(hostname);
@@ -40,8 +40,7 @@ export async function main(ns) {
     ns.exec('weaken.js', hostname, 2 * multiplier, hostname)
     ns.exec('hack.js', hostname, multiplier, hostname)
 
-    ns.exec('filler-three.js', hostname, multiplier - 1, hostname)
-
+    ns.exec('filler-three.js', hostname, Math.max(multiplier - 1, 1) , hostname)
     // ns.exec('hack.js', hostname, multiplier, hostname)
     ns.tprint(hostname, 'end host hack')
 

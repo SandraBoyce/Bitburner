@@ -18,12 +18,16 @@ export async function main(ns) {
 
     for (let i = 0; i < servers0Port.length; ++i) {
         const serv = servers0Port[i];
+
+        ns.killall(serv)
     
         await ns.scp("filler-three.js", serv);
         ns.nuke(serv);
         ns.exec("filler-three.js",serv, 6, serv);
-    }
-    ns.tprint('step serv0')
 
+        ns.tprint(serv, ' has been s0-upped')
+    }
+
+    ns.tprint('step serv0')
     ns.spawn("s1-up.js", 1)
 }
